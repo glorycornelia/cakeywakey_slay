@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+}
+
+ul{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: rgb(108, 108, 108);
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: rgb(255, 146, 56);
+}
+
+.login {
+    width: 400px;
+}
+
+form {
+    width: 250px;
+    margin: 60px auto;
+}
+
+h1 {
+    margin: 10px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+a {
+    color: #E71F4D;
+    text-decoration: none;
+}
+
+hr {
+    border-top: 2px solid #ffa12c;
+}
+
+p {
+    text-align: center;
+    margin: 10px;
+}
+
+.right {
+    background: radial-gradient(50% 50% at 50% 50%, #F9BDD7 0%, #FFF 100%);
+}
+
+.right img {
+    width: 450px;
+    height: 450px;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+input {
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #E71F4D;
+    border-radius: 80px;
+    color: rgba(232, 37, 82, 0.33);
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 252px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 80px;
+    background: #E71F4D;
+}
+
+button:hover {
+    background: rgba(214, 86, 64, 1);
+}
+
+
+@media (max-width: 880px) {
+    .container {
+        width: 100%;
+        max-width: 750px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    form {
+        width: 300px;
+        margin: 20px auto;
+    }
+
+    .login {
+        width: 400px;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .right img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
