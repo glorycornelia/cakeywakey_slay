@@ -11,7 +11,7 @@ class LoginController extends Controller
     // Show the login form
     public function showLoginForm()
     {
-        return view('login'); // This is the login view you shared
+        return view('login'); 
     }
 
     // Handle the login attempt
@@ -19,7 +19,7 @@ class LoginController extends Controller
     {
         // Validate the input data
         $request->validate([
-            'email' => 'required|email|exists:users,email', // Ensure the email exists in the database
+            'email' => 'required|email|exists:users,email',
             'password' => 'required|string|min:8', // Password validation
         ]);
     
@@ -27,7 +27,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
     
         if (Auth::attempt($credentials)) {
-            // Redirect to the intended page or home
+            // Redirect to the home page
             return redirect()->intended('home');
         } else {
             // Redirect back with an error message if credentials are invalid
@@ -35,12 +35,12 @@ class LoginController extends Controller
         }
     }
 
-    // Optionally, add a logout method
+    // Logout method
     public function logout(Request $request)
     {
         Auth::logout(); // Log out the user
         $request->session()->invalidate(); // Invalidate the session
         $request->session()->regenerateToken(); // Regenerate CSRF token for security
-        return redirect('/login'); // Redirect back to the login page
+        return redirect('/home');
     }
 }

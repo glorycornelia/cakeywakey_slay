@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     box-shadow: 0 .5px 5px rgba(0, 0, 0, 0.157);
 }
@@ -139,6 +143,7 @@ footer{
     font-weight: 800;
     line-height: normal;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .custom-h1 {
@@ -179,16 +184,17 @@ footer{
 .order-page .card {
     border: 2px solid transparent; /* Reset default Bootstrap border */
     transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .order-page .card:hover {
     transform: scale(1.05); /* Add a hover effect */
-    border-color: #ffae00; /* Highlight border */
+    border-color: #F176AD; /* Highlight border */
 }
 
 .order-page .card.selected {
     background-color: #ffefc1 !important; /* Highlight selected card */
-    border-color: #ffae00 !important; /* Highlight selected border */
+    border-color: #F176AD !important; /* Highlight selected border */
 }
 
 .order-page h1 {

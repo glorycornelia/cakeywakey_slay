@@ -21,18 +21,22 @@ class RegisterController extends Controller
         // Validate the input data
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email', // Ensure email is unique
+            'phone' => [
+                'required',
+                'regex:/^\d{10,13}$/',
+            ],
+            'email' => 'required|string|email|max:255|unique:users,email', 
             'password' => 'required|string|min:8',
         ]);
     
         // Create the new user
         $user = User::create([
             'name' => $request->name,
+            'phone' =>$request->phone,
             'email' => $request->email,
-            'password' => Hash::make($request->password),  // Hash the password before saving
+            'password' => Hash::make($request->password), 
         ]);
     
-        // Optionally set `is_admin` as false (since it’s not fillable in the model)
         $user->is_admin = false; // Default to non-admin user
         $user->save();
 

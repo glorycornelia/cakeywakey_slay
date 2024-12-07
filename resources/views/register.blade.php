@@ -31,6 +31,9 @@
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="name"><br>
 
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" placeholder="phone"><br>
+
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="email" required>
                 

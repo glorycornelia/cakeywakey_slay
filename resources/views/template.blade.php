@@ -23,7 +23,7 @@
             <a class="nav-link" aria-current="page" href="{{ url('/home') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/about') }}">About</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/order') }}">Order</a>
@@ -32,13 +32,23 @@
             <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <!-- Cart Icon and Log Out -->
-          <a href="{{ url('/cart') }}" class="btn btn-light me-2">
-            <i class="fa fa-shopping-cart"></i> Cart
-          </a>
-          <a href="{{ url('/login') }}" class="btn btn-dark">Log Out</a>
-        </form>
+        <div class="d-flex">
+          <!-- Show Cart and Logout if user is authenticated -->
+          @auth
+            <a href="{{ url('/cart') }}" class="btn btn-light me-2">
+              <i class="fa fa-shopping-cart"></i> Cart
+            </a>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <button type="submit" class="btn btn-dark">Log Out</button>
+            </form>
+          @endauth
+
+          <!-- Show Login if user is a guest -->
+          @guest
+            <a href="{{ route('login') }}" class="btn btn-dark">Log In</a>
+          @endguest
+        </div>
       </div>
     </div>
   </nav>

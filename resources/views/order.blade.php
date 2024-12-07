@@ -78,7 +78,17 @@
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="customize_button">Order Now</button>
+        @auth
+            <!-- Button is enabled for logged-in users -->
+            <button type="submit" class="customize_button">Order Now</button>
+        @endauth
+
+        @guest
+            <!-- Button is disabled and shows a login prompt for guests -->
+            <a href="{{ route('login') }}" type="submit" class="customize_button">
+                Log in to Order
+            </a>
+        @endguest
     </form>
 </div>
 

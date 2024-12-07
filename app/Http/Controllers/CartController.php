@@ -73,6 +73,6 @@ class CartController extends Controller
             $cartItem->delete(); // Remove the cart item after processing
         });
 
-        return redirect()->route('cart.confirmation')->with('success', 'Order placed successfully.');
+        return redirect()->route('payment.pay', ['order' => $order->order_id]);
     }
 }
