@@ -85,9 +85,7 @@
 
         @guest
             <!-- Button is disabled and shows a login prompt for guests -->
-            <a href="{{ route('login') }}" type="submit" class="customize_button">
-                Log in to Order
-            </a>
+            <button type="button" onclick="window.location='{{ route('login') }}';" class="customize_button">Order Now</button>
         @endguest
     </form>
 </div>

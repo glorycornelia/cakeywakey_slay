@@ -7,11 +7,28 @@ use App\Http\Controllers\CakeController;
 use App\Http\Controllers\CustomizeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\AdminController;
 
 // Login Page
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Routes for home and admin pages
+Route::middleware('auth')->group(function () {
+    // User home page
+    Route::get('/home', function () {
+        return view('home'); // User home page
+    })->name('home');
+
+    // Admin home page
+    Route::get('/admin', function () {
+        return view('admin'); // Admin home page
+    })->name('admin');
+});
+
+// Admin Page
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // Register Page
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');

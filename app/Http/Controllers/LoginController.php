@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;  // Import User model
+use App\Models\User; // Import User model
 
 class LoginController extends Controller
 {
@@ -22,13 +22,17 @@ class LoginController extends Controller
             'email' => 'required|email|exists:users,email',
             'password' => 'required|string|min:8', // Password validation
         ]);
-    
+
         // Attempt to log in with the given credentials
         $credentials = $request->only('email', 'password');
-    
+
         if (Auth::attempt($credentials)) {
-            // Redirect to the home page
-            return redirect()->intended('home');
+            // Check if the user is an admin
+            $user = Auth::user();
+            if ($user->is_admin == 1) {
+                return redirect()->intended('admin'); // Redirect to admin page
+            }
+            return redirect()->intended('home'); // Redirect to user home page
         } else {
             // Redirect back with an error message if credentials are invalid
             return redirect()->back()->withErrors(['login' => 'Invalid credentials']);

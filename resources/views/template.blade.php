@@ -23,13 +23,13 @@
             <a class="nav-link" aria-current="page" href="{{ url('/home') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="{{ url('/home') }}#about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/order') }}">Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+            <a class="nav-link" href="{{ url('/home') }}#contact">Contact</a>
           </li>
         </ul>
         <div class="d-flex">
