@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    box-shadow: 0 .5px 5px rgba(0, 0, 0, 0.157);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+.gallery {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-gap: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.gallery .card {
+    width: 16rem; /* Smaller card width */
+    background: #ffffff;
+    border: 4px solid #ffffff;
+    color: #E82451;
+    border-radius: 20px;
+}
+
+.gallery .card img {
+    width: 15rem; 
+    height: 15rem; 
+    padding-top: 0.2rem;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.gallery .card-title {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 12px; 
+    font-weight: 800;
+    line-height: normal;
+}
+
+.gallery .card-text {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(159deg, #DC2C7B -3.07%, #40240F 79.35%);
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 30px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: Montserrat;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    font-family: Montserrat;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: burlywood;
+}
+
+.footer-bottom{
+    background: #ffffff;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+    color: #000000;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    font-family: Montserrat;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
+.customize-button {
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(231, 31, 77, 0.96) 42.69%, rgba(231, 31, 77, 0.00) 159.76%);
+    width: 141px;
+    height: 48px;
+    border: none; 
+    color: #ffffff;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.custom-h1 {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 536px;
+}
+
+.custom-p {
+    color: #ffffff;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.our-product-h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    background: linear-gradient(158deg, #E82451 14.55%, rgba(232, 36, 81, 0.00) 126.86%); 
+    -webkit-background-clip: text;
+    color: transparent; 
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Order Page */
+.order-page .card {
+    border: 2px solid transparent; /* Reset default Bootstrap border */
+    transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.order-page .card:hover {
+    transform: scale(1.05); /* Add a hover effect */
+    border-color: #F176AD; /* Highlight border */
+}
+
+.order-page .card.selected {
+    background-color: #ffefc1 !important; /* Highlight selected card */
+    border-color: #F176AD !important; /* Highlight selected border */
+}
+
+.order-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.customize_button {
+    background-color: #ffae00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.customize_button:hover {
+    background-color: #cc8a00;
+}
+
+/*Cart-page*/
+.cart-page {
+    padding: 30px;
+}
+
+.cart-page .cart-item {
+    margin-bottom: 20px;
+}
+
+.cart-page .cart-item .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-page .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cart-page .card-text {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.cart-page .form-check {
+    margin-top: 10px;
+}
+
+.cart-page .btn-danger {
+    margin-right: 10px;
+}
+
+.cart-page .text-end .btn {
+    margin-top: 10px;
+}
+
+.cart-page .mt-3 {
+    margin-top: 20px;
+}
+
+.cart-page h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Style for card items */
+.cart-page .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.cart-page .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-page .form-check-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Button Styling */
+.cart-page .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+.cart-page .btn-success:hover {
+    background-color: #218838;
+}
+
+.cart-page .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.cart-page .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Select All checkbox */
+.cart-page .form-check-input {
+    margin-right: 10px;
+}
